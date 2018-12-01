@@ -33,7 +33,12 @@
         }
 
         if(check){
-            login($('#username').val(),$('#password'));
+            var subjects;
+            for (let i = 0; i < array.length; i++) {
+                subjects.push
+                
+            }
+            signupTutee($('#username'),$('#password'),$('#fname'),$('#lname'),subjects,$('#email'),"");
         }
         return false;
     });
