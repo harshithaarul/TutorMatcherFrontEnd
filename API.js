@@ -7,7 +7,20 @@ function login(user,pass) {
     console.log("sent");
     axios.post('http://169.233.161.73:8080/', qs.stringify(data))
     .then(function (response) {
-        if(response)
+        if(response.data.message == "success"){
+            sessionStorage.setItem('user', response.data.result);
+            switch(response.data.result.type){
+                case "tutor":
+                    window.location.href = 'tutor.html'
+                    break;
+                case "tutee":
+                    window.location.href = 'tutee.html'
+                    break;
+                default:
+                    console.log("unknown type");
+            }
+            
+        }
         console.log(response);
     })
     .catch(function (error) {
@@ -15,7 +28,7 @@ function login(user,pass) {
     });
 }
 
-function getMatches(keyword) {
+function findByKeyword(keyword) {
     var data = {
         type:"tutee",
         todo:"findByKeyword",
@@ -50,6 +63,10 @@ function signupTutor(user,pass,fname,lname,subjects,exp,desc,pay,available,email
     };
     axios.post('http://169.233.161.73:8080/', qs.stringify(data))
     .then(function (response) {
+        if(response.data.message == "success"){
+            sessionStorage.setItem('user', response.data.result);
+            window.location.href = 'tutor.html';
+        }
         console.log(response.data);
     })
     .catch(function (error) {
@@ -75,6 +92,10 @@ function signupTutee(user,pass,fname,lname,subjects,email,pic) {
     };
     axios.post('http://169.233.161.73:8080/', qs.stringify(data))
     .then(function (response) {
+        if(response.data.message == "success"){
+            sessionStorage.setItem('user', response.data.result);
+            window.location.href = 'tutee.html';
+        }
         console.log(response.data);
     })
     .catch(function (error) {
