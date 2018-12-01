@@ -33,12 +33,7 @@
         }
 
         if(check){
-            var subjects;
-            for (let i = 0; i < array.length; i++) {
-                subjects.push
-                
-            }
-            signupTutee($('#username'),$('#password'),$('#fname'),$('#lname'),subjects,$('#email'),"");
+            signupTutee($('#username'),$('#password'),$('#fname'),$('#lname'),$('#subjects'),$('#email'),$('#picture'));
         }
         return false;
     });
