@@ -35,6 +35,7 @@
         if(check){
             login($('#username').val(),$('#password'));
         }
+        return false;
     });
 
 
