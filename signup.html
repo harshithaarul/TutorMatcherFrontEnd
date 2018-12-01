@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Tutor Sign Up</title>
+	<title>Login V3</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->
+<!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -14,13 +14,13 @@
 	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->
+<!--===============================================================================================-->	
 	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->
+<!--===============================================================================================-->	
 	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
@@ -28,67 +28,34 @@
 <!--===============================================================================================-->
 </head>
 <body>
-
+	
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form">
-					<span class="login100-form-logo">
-						<i class="zmdi zmdi-landscape"></i>
-					</span>
 
 					<span class="login100-form-title p-b-34 p-t-27">
-						Sign Up
+						I am a . . .
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate = "Enter username">
-						<input class="input100" id="username" type="text" name="username" placeholder="Username">
-						<span class="focus-input100" data-placeholder="&#xf207;"></span>
-					</div>
-
-					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" id="password" type="password" name="pass" placeholder="Password">
-						<span class="focus-input100" data-placeholder="&#xf191;"></span>
-					</div>
-
-					<div class="wrap-input100 validate-input" data-validate = "Enter FirstName">
-						<input class="input100" id="username" type="text" name="fname" placeholder="First Name">
-						<span class="focus-input100" data-placeholder="&#xf207;"></span>
-					</div>
-					<div class="wrap-input100 validate-input" data-validate = "Enter LastName">
-						<input class="input100" id="username" type="text" name="lname" placeholder="Last Name">
-						<span class="focus-input100" data-placeholder="&#xf207;"></span>
-					</div>
-					<div class="wrap-input100 validate-input" data-validate = "Enter url">
-						<input class="input100" id="username" type="text" name="picture" placeholder="Enter a url of a picture of yourself!">
-						<span class="focus-input100" data-placeholder="&#xf207;"></span>
-					</div>
-
-					<div class="wrap-input100 validate-input" data-validate = "Enter Subjects">
-						<input class="input100" id="username" type="text" name="subjects" placeholder="What subjects do you need tutoring">
-						<span class="focus-input100" data-placeholder="&#xf207;"></span>
-					</div>
-					<div class="wrap-input100 validate-input" data-validate = "Enter Email">
-						<input class="input100" id="username" type="text" name="email" placeholder="Enter your email id.">
-						<span class="focus-input100" data-placeholder="&#xf207;"></span>
-					</div>
-
-
-
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
-							Sign Up
+						<button class="login100-form-btn" onclick="amTutor()">
+							Tutor
 						</button>
-					</div>
+                    </div>
+                    <br/>
+                    <div class="container-login100-form-btn">
+                            <button class="login100-form-btn" onclick="amTutee()">
+                                Student
+                            </button>
+                    </div>
 
-				</form>
 			</div>
 		</div>
 	</div>
-
+	
 
 	<div id="dropDownSelect1"></div>
-
+	
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
@@ -107,7 +74,17 @@
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="tiny-qs-master/tiny-qs.min.js"></script>
 	<script src="API.js"></script>
-	<script src="js/tutee-signup.js"></script>
+
+	<script>
+		function amTutor() {
+			window.location.href = "indexTutor.html";
+			return false;
+		}
+		function amTutee() {
+			window.location.href = "indexTutee.html";
+			return false;
+		}
+	</script>
 
 </body>
 </html>

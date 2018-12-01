@@ -33,7 +33,7 @@
         }
 
         if(check){
-            login($('#username').val(),$('#password'));
+            login($('#username'),$('#password'));
         }
         return false;
     });
