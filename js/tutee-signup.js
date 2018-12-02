@@ -33,7 +33,7 @@
         }
 
         if(check){
-            signupTutee($('#username'),$('#password'),$('#fname'),$('#lname'),$('#subjects'),$('#email'),$('#picture'));
+            signupTutee($('#username').val(),$('#password').val(),$('#fname').val(),$('#lname').val(),$('#subjects').val(),$('#email').val(),$('#picture').val());
         }
         return false;
     });

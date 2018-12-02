@@ -4,10 +4,10 @@ function login(user,pass) {
         user: user,
         password: pass
     };
-    console.log("sent");
+    console.log(data);
     axios.post('http://169.233.161.73:8080/', qs.stringify(data))
     .then(function (response) {
-        if(response.data.message == "success"){
+        if(response.data.result != null){
             sessionStorage.setItem('user', response.data.result);
             switch(response.data.result.type){
                 case "tutor":
@@ -52,8 +52,8 @@ function signupTutor(user,pass,fname,lname,subjects,exp,desc,pay,available,email
         todo:"signup",
         user: user,
         password: pass,
-        fname: fname,
-        lname: lname,
+        fName: fname,
+        lName: lname,
         subjects: subjects,
         exp: exp,
         desc: desc,
@@ -77,20 +77,17 @@ function signupTutor(user,pass,fname,lname,subjects,exp,desc,pay,available,email
 
 function signupTutee(user,pass,fname,lname,subjects,email,pic) {
     var data = {
-        type:"tutor",
+        type:"tutee",
         todo:"signup",
         user: user,
         password: pass,
-        fname: fname,
-        lname: lname,
+        fName: fname,
+        lName: lname,
         subjects: subjects,
-        exp: exp,
-        desc: desc,
-        pay:pay,
-        available:available,
         email:email,
         pic:pic
     };
+    console.log(data);
     axios.post('http://169.233.161.73:8080/', qs.stringify(data))
     .then(function (response) {
         if(response.data.message == "success"){
