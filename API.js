@@ -28,7 +28,8 @@ function login(user,pass) {
     });
 }
 
-function findByKeyword(keyword) {
+function findByKeyword() {
+    var keyword = $('#search').val();
     var data = {
         type:"tutee",
         todo:"findByKeyword",
@@ -43,6 +44,7 @@ function findByKeyword(keyword) {
     .catch(function (error) {
         console.log(error);
     });
+    return false;
 }
 
 function getMatches() {
