@@ -3,6 +3,10 @@
 <title>TuteePage</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="tiny-qs-master/tiny-qs.min.js"></script>
+<script src="API.js"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -86,10 +90,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 <!-- Search-->
   <div class="topnav">
   <div class="search-container">
-    <form action="/action_page.php">
-      <input type="text" placeholder="Type in the subject.." name="search">
-      <button type="submit"><i class="fa fa-search"></i></button>
-    </form>
+
+      <input type="text" id="search" placeholder="Type in the subject.." name="search">
+      <button type="submit" onclick="findByKeyword()"><i class="fa fa-search"></i></button>
+
   </div>
 </div>
 <br>
@@ -143,4 +147,5 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     </div>
   </div>
  </body>
+ 
 </html>
