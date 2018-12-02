@@ -45,6 +45,22 @@ function findByKeyword(keyword) {
     });
 }
 
+function getMatches() {
+    var data = {
+        type:"tutee",
+        todo:"findByKeyword",
+        keyword:keyword
+    };
+    console.log("sent");
+    axios.post('http://169.233.161.73:8080/', qs.stringify(data))
+    .then(function (response) {
+        if(response)
+        console.log(response);
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+}
 
 function signupTutor(user,pass,fname,lname,subjects,exp,desc,pay,available,email,pic) {
     var data = {
