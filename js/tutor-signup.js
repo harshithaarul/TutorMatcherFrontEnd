@@ -33,7 +33,7 @@
         }
 
         if(check){
-            login($('#username').val(),$('#password'));
+            signupTutor($('#username').val(),$('#password').val(),$('#fname').val(),$('#lname').val(),$('#subjects').val(),$('#exp').val(),$('#desc').val(),$('#pay').val(),$('#available').val(),$('#email').val(),$('#picture').val());
         }
         return false;
     });
