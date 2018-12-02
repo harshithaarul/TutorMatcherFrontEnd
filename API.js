@@ -28,7 +28,8 @@ function login(user,pass) {
     });
 }
 
-function findByKeyword(keyword) {
+function findByKeyword() {
+    var keyword = $('#search').val();
     var data = {
         type:"tutee",
         todo:"findByKeyword",
@@ -37,12 +38,26 @@ function findByKeyword(keyword) {
     console.log("sent");
     axios.post('http://169.233.161.73:8080/', qs.stringify(data))
     .then(function (response) {
-        if(response)
-        console.log(response);
+        if(response.data.message == "success"){
+            var b = $('#main');
+            for (let i = 0; i < response.data.result.length; i++) {
+                var tutor = response.data.result[i];
+                console.log(tutor);
+                if(b.last().length >= 3){
+                    b.append("<div class=\"w3-row-padding\"></div>");
+                }
+                // b.append(createNewElement());
+            }
+        }
     })
     .catch(function (error) {
         console.log(error);
     });
+    return false;
+}
+
+function createNewElement(){
+
 }
 
 function getMatches() {
@@ -54,7 +69,6 @@ function getMatches() {
     console.log("sent");
     axios.post('http://169.233.161.73:8080/', qs.stringify(data))
     .then(function (response) {
-        if(response)
         console.log(response);
     })
     .catch(function (error) {
